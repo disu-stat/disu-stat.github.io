@@ -3,7 +3,3 @@
 assets/css/main.scss
 assets/plotly/demo.html
 lighthouse_results/**
-
-{
-  "editor.defaultFormatter": ""
-}
