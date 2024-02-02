@@ -5,5 +5,5 @@ assets/plotly/demo.html
 lighthouse_results/**
 
 {
-  "editor.defaultFormatter": "<another formatter>"
+  "editor.defaultFormatter": ""
 }
