@@ -2,15 +2,16 @@
 layout: about
 title: About
 permalink: /
-subtitle: LSE, London, d.su1@lse.ac.uk
+subtitle:
 
 profile:
   align: right
-  image: /assets/img/DSC04178.jpg
+  image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Columbia House 7.02b</p>  
-    <p>69 Aldwych</p>  
+    <p>d.su1@lse.ac.uk</p>
+    <p>Columbia House 7.02b</p>
+    <p>69 Aldwych</p>
     <p>London</p>
 
 news: false # includes a list of news items
