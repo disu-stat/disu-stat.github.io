@@ -11,8 +11,8 @@ profile:
   more_info: >
     <p>d.su1@lse.ac.uk</p>
     <p>Columbia House 7.02b</p>
-    <p>69 Aldwych</p>
-    <p>London</p>
+    69 Aldwych  
+    London
 
 news: false # includes a list of news items
 latest_posts: false # includes a list of the newest posts
