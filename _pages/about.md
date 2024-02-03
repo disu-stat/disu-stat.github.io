@@ -22,7 +22,12 @@ social: true # includes social icons at the bottom of the page
 
 I am a Ph.D. student in Statistics in the [Department of Statistics](https://www.lse.ac.uk/statistics) at [London School of Economics (LSE)](https://www.lse.ac.uk/). Before that, I received my M.Phil. in Statistics and B.Sc. in Mathematics from [The Chinese University of Hong Kong (CUHK)](https://www.cuhk.edu.hk/english/index.html).
 
-My research interests are change point detection, asymptotic variance estimation and statistical learning. I am particularly keen on creating statistical methods with theoretical guarantee and building handy software packages.  
+## Research Interests
+Below are my research interests. I am particularly keen on creating statistical methods with theoretical guarantee and building handy software packages.  
+- Change point detection
+- Asymptotic variance estimation
+- Statistical learning
+- Anything fun and related
 
 ## Education
 - Ph.D. in Statistics, LSE, 2027 (Expected). Supervisors: [Professor Tengyao Wang](https://personal.lse.ac.uk/wangt60/) and [Professor Yining Chen](https://personal.lse.ac.uk/cheny100/).
