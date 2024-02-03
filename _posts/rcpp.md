@@ -1,13 +1,12 @@
 ---
-layout: page
+layout: post
 title: Building an `R` Package and Integrate `C++`
+date: 2022-08-06
 description: Increading your `R` code speed
-img: ./blog_rcpp.png
-importance: 1
-category: work
-related_publications: true
-#permalink: /sharing/tech/rcpp
+tags: rcpp
+categories: coding
 ---
+
 Welcome to my blog on the following topics: speeding up `R` codes using `C++`, building packages using `R` and `C++`, parallel computing with `R` and `C++`. These tools can help with simulations in daily research. There're also some of my troubleshootings, which might help with future debug.
 
 
