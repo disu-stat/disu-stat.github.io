@@ -1,0 +1,111 @@
+---
+layout: page
+title: Building an `R` Package and Integrate `C++`
+description: Increading your `R` code speed
+img: ./blog_rcpp.png
+importance: 1
+category: work
+related_publications: true
+#permalink: /sharing/tech/rcpp
+---
+Welcome to my blog on the following topics: speeding up `R` codes using `C++`, building packages using `R` and `C++`, parallel computing with `R` and `C++`. These tools can help with simulations in daily research. There're also some of my troubleshootings, which might help with future debug.
+
+
+# Speed up `R` codes using `C++`  
+It is well-known that `R` is vectorized and slow in executing loops. To speed up the execution, `C++` can serve as a remedy. The `R` package `Rcpp` by Dirk Eddelbuettel et. al. provides nice integration of `R` and `C++`.
+  1. Installation of Rcpp  
+  - (On windows) Install Rtools in a folder whose name *doesn't contain spaces or tabs*  
+  - Install package Rcpp
+  2. Some Basic Syntax  
+  - Not reusable functions: Directly write `C++` functions in RStudio console using  `cppFunction()`. E.g.
+  ```
+  cppFunction("double foo(double x){return x+1.0;}",depends="RcppArmadillo")
+  ```
+  - Reusable functions: Prepare a `C++` file `someFile.cpp`. Write functions in it. Directly source the file `someFile.cpp` in RStudio.   
+  - In `C++` files, insert `// [[Rcpp::export]]` before the declaration of functions that you want to pass to `R`. Otherwise you cannot call it in `R`.    
+  - Functions written in `someFile.cpp` is only usable in the current `R` session and cannot be saved. If a new `R` session is started, we need to source `someFile.cpp` again    
+  - Reference: [Blog](https://teuder.github.io/rcpp4everyone_en/210_rcpp_functions.html), [Gallery](https://gallery.rcpp.org/), [中文参考](https://jywang2016.github.io/rcpp4everyone_cn/)
+  3. Another useful package: `RcppArmadillo`. It provides some `R`-like functions including sampling functions. Reference: [click here](http://arma.sourceforge.net/docs.html#top)   
+  4. One more useful package `RcppEigen`: [click here](https://cran.r-project.org/web/packages/RcppEigen/index.html).  
+  5. Yes another helpful package `RcppNumerical`: [see here](https://cran.r-project.org/web/packages/RcppNumerical/vignettes/introduction.html)
+  6. Some special topics:  
+  - Passing a `C++` function as an argument into another `C++` function in Rcpp:  
+    - To do the "passing" in R console: The data type of the callee is `Rcpp::Function` or `SEXP`. And pass the output of this callee to `as<double>()` before passing it to any local variable. But you can only do the "passing" in R console rather than in the `C++` file. Possible to export the caller.
+    - To do the "passing" in `C++` file by other `C++` functions: the data type of this callee is a pointer. Need to declare a new type for the argument. Cannot export the caller.
+    - To do the "passing" in both: Seems not easy. By adding `//[[Rcpp::export]]` before the caller, the type is automatically `SEXP`. ad hoc Remedy: use a "wrapper" to perform the call in cpp and export the wrapper to R.
+
+
+# Speeding up `R` codes: other methods  
+Sometimes a simple improvement suffices.  
+  1. Parallel computing: with the help of the [cluster system](https://www.cuhk.edu.hk/itsc/hpc/getstart.html) in CU, we can use around 30 cores for one task.    
+  2. Parallel computing & `C++`: Notice that, **`C++` functions cannot be paralleled in `R` unless they are built into an `R` package**. (Please refer to the next section)    
+  3. Some tricks:     
+    - `C++`: Use pointers properly    
+    - `C++`: Reduce the number of local variables (declaration and copying are slow in `C++`)    
+    - `C++`: Use pipe operator. For details, IDK...    
+    - `R`: Use the Forward-Pipe Operator `%>%` from package `magrittr`.    
+    - `R`: Vectorize, use `apply`, etc.    
+
+
+# Building packages purely by `R`    
+To build an `R` package, just prepare all source codes and use the pane in RStudio. Reference: [click here](https://support.rstudio.com/hc/en-us/articles/200486488-Developing-Packages-with-the-RStudio-IDE#:~:text=R%20packages%20are%20an%20ideal,of%20build%20output%20and%20errors)  
+
+
+# Building packages by `R` and `C++`  
+To make your codes distributable and parallelable, it would be a good choice to build a package for it. The following are steps for writing, building and updating a package.  
+1. Write a package with `Rcpp`   
+  a. Write source `.cpp` codes   
+  b. Create a package skeleton: I prefer the following command
+  ```
+  RcppArmadillo::RcppArmadillo.package.skeleton("yourPackageName")
+  ```
+    One can also use
+  ```
+  Rcpp.package.skeleton("yourPackageName", cpp_files = c("convolve.cpp"),example=F)
+  ```
+    A folder named `yourPackageName` will be created in the working directory.    
+  c. Copy all `.cpp` and `.R` source code files to `./src` folder directly.  
+  d. Some notes:  
+  - The created package includes: `DESCRPTION` & `man` folder,  `NAMESPACE`, `src` & `R` folder (which include `RcppExport`). We only touch the `src` folder.    
+  - `RcppArmadillo` changes `C++` data type to R data type, automates `DESCRPTION` and `NAMESPACE` (`linkingTo` etc). If instead one uses `Rcpp.package.skeleton`, one still needs to modify `Depends/Imports` and `LinkingTo`, along with correct `NAMESPACE` file, `makevar` in description.    
+  - Compared to `Rcpp`, `RcppArmadillo` will create additional `Makevars` and `Makevars.win` files in the `src` folder. No need to modify them.    
+  - If the package is built using RStudio pane button, need to add `makevar` file in `./src` (or directly choose package type "with rcpparmadillo"), change the documentation `cppFileName.rd` in `./man`. It is really tedious.    
+
+2. Build the package: execute the following commands in `R` console   
+  a. `compileAttributes()` (to modify the `RcppExports.R` file)   
+  b. `setwd('./yourPackageName')`   
+  c. `devtools::check()` (optional)   
+  d. `devtools::build()` (create a `someName.tar.gz` file, that is your package and you can upload it to the cluster or send it to others)
+
+3. Use the package  
+  a. Install: there are many ways to install
+  - `install.packages('someName.tar.gz',repos=NULL,type='source')`
+  -  `devtools::install('yourPackageName')`
+  - `setwd('./yourPackageName'); devtools::install()`   
+  b. Load: in R session, run `library('yourPackageName')`    
+  - Use `ls(package:yourPackageName)` to check what functions are loaded from the package
+
+4. Update the package    
+  a. Modify codes in `./src`   
+  b. Repeat Step 2: Build the package and Step 3: Use the package
+
+# Parallel computing with `R` and `C++`  
+Recall that `C++` functions cannot be paralleled in `R` unless they are built into an `R` package. Moreover, once the package is ready, we must load it in the parallel computing function `foreach()`. For example,
+```
+foreach(iRep = 1:nRep, .combine = 'c', .packages = c('magrittr','yourPackageName')) %dopar% { someSimulation(iRep) }
+```
+Otherwise there will be an error `Package not found`.
+
+## Troubleshooting
+- Use `R3.6.0` for parallel computing with `C++`
+- `install error: install.packages from source gives no functions while devtools::install from folder succeeds`: In Windows10, use `devtools::install('yourPackageName')` instead of from source using `someName.tar.gz`
+- According to my experience solely, if the package is to be installed into the cluster in CUHK, use the following command: `R CMD INSTALL 'someName.tar.gz' --no-lock` (directly type it in the console, no need to run `R`)
+- Note 1: `not exit in scope` or `no matching function`: Check data types! It solves 95% of the problems.
+- Note 2: `C++` checks typing when you source the file. Make sure data types are properly declared, functions are applied to variables with matching types (functions from different packages may have the same name, but accept different types of arguments), and arithmetic operators are applied to `double` (if you perform divison on `int`, the simulation results could be hugely different)
+- Note 3: e.g., `std::max(a,b)` is different from `x.max()` where `x` is a of type `arma::mat`.
+
+
+### Problems to be solved
+- How to use `wrap()`
+
+{% include base_path %}
