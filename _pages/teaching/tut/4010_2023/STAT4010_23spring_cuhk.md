@@ -1,10 +1,9 @@
 ---
 layout: page
-title: "STAT4010 Bayesian Learning"
+title: "STAT4010 Bayesian Learning (2023 Spring)"
 permalink: /teaching/tut/STAT4010_23spring_cuhk
 venue: "CUHK"
 ---
-# STAT4010 Bayesian Learning (2023 Spring)
 ## Tutorial Information
 Time: Every Thursday 16:30-17:15  
 Venue: LSB LT2  
@@ -24,6 +23,7 @@ Venue: LSB LT2
   | 13-Apr-2023 |      09     | Reweighting Importance Sampling, MH algorithm | [Note 09](./S4010_tut9_2023.pdf)  |  [tut9.R](tut9.R)  ||
   | 20-Apr-2023 |      10     | Gibbs Sampler, MH within Gibbs | [Note 10](./S4010_tut10_2023.pdf)  |  [tut10.R]()  ||
 
+  
 ## References
 1. [Course Website](https://sites.google.com/site/kwchankeith/teaching/s4010/s4010-2023Spring) (This is your major reference for revision.)
 2. [E-learning Platform](https://www1.sta.cuhk.edu.hk/stady/?course=S4010) (You may want to check the platform before bringing questions to us.)
