@@ -3,6 +3,7 @@
 # Run this script to deploy the app to Github Pages
 
 # Parse cmd arguments
+bundle add webrick
 
 SRC_BRANCH="master"
 DEPLOY_BRANCH="gh-pages"
