@@ -1,12 +1,18 @@
 ---
 layout: page
 permalink: /teaching/
-title: teaching
-description: Materials for courses you taught. Replace this text with your description.
+title: Teaching
+description:
 nav: true
 nav_order: 2
 ---
-
-For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
-
-Organize your courses by years, topics, or universities, however you like!
+# Tutorials
+## CUHK  
+* STAT5104 **Data Mining** (Spring 2023)
+  * Instructor: Prof. Pui Lam LEUNG
+  * Office Hour: Every Tuesday 4pm-6pm
+* STAT4010 [**Bayesian Learning**](/teaching/tut/STAT4010_23spring_cuhk) (Spring 2022, Spring 2023)
+  * Instructor: Prof. Kin Wai CHAN
+  * Office Hour: Every Tuesday 2pm-4pm
+* STAT1011 **Introduction to Statistics** (Fall 2021, Fall 2022)
+  * Instructor: Dr. Edmond CHAN
