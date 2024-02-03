@@ -2,11 +2,11 @@
 layout: about
 title: About
 permalink: /
-subtitle: LSE, London, d.su1@;se.ac.uk
+subtitle: LSE, London, d.su1@lse.ac.uk
 
 profile:
   align: right
-  image: DSC04178.JPG
+  image: #DSC04178.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Columbia House 7.02b</p>  

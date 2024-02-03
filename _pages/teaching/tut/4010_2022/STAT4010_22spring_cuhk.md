@@ -4,8 +4,6 @@ title: "STAT4010 Bayesian Learning"
 permalink: /teaching/tut/STAT4010_22spring_cuhk
 venue: "CUHK"
 ---
-{% include base_path %}
-
 # STAT4010 Bayesian Learning (2023 Spring)
 ## Tutorial Information
 Time: TBA
