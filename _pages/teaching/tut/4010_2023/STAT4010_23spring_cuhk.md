@@ -10,7 +10,7 @@ Venue: LSB LT2
 
   |  |Tutorial|Topics|Notes|Codes|Remark|
   |:----:|:-:|:----:|:---:|:--:|:----:|
-  | 2-Feb-2023 |      01     | Bayesian Philosophy, Posterior Calculation, R Review   | [Note 01](_pages/teaching/tut/4010_2023/S4010_tut1_2023.pdf)   | [tut1.R](./S4010_2023_tut1_sol.R)  ||
+  | 2-Feb-2023 |      01     | Bayesian Philosophy, Posterior Calculation, R Review   | [Note 01](./S4010_tut1_2023.pdf)   | [tut1.R](./S4010_2023_tut1_sol.R)  ||
   | 9-Feb-2023 |      02     | Representation, Invariant Priors | [Note 02](./S4010_tut2_2023.pdf)  |  [tut2.R](./S4010_2023_tut2_sol.R)   ||
   | 16-Feb-2023 |      03     | Prior Design | [Note 03](./S4010_tut3_2023.pdf)  |  [tut3.R]()  ||
   | 23-Feb-2023 |      04     | Loss, Risk, and Bayes Estimator | [Note 04](./S4010_tut4_2023.pdf)  |  [tut4.R]()  ||
