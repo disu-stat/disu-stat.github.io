@@ -7,3 +7,4 @@ _config.yml
 _pages/**
 _posts/**
 _projects/**
+_layouts/default.liquid
