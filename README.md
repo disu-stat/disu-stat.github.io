@@ -1,5 +1,19 @@
 # al-folio
 
+## Repository reset for Vite deployment
+
+This repository has been reset for a Vite-based deployment flow.
+
+- GitHub Pages deploy workflow now builds with `npm ci && npm run build` and publishes `dist/`.
+- `.nojekyll` is included so GitHub Pages serves the built static output directly.
+- A minimal `index.html` placeholder is in place until the new Vite app is added.
+
+If you want to save this project as a private repository with a different name:
+
+1. In GitHub, create a new **private** repository with your target name.
+2. Push this branch to that repository, or import this repository into the new one.
+3. Enable GitHub Pages for that new repository and keep using the Vite deploy workflow.
+
 <div align="center">
 
 [![Preview](assets/img/readme_preview/al-folio-preview.png)](https://alshedivat.github.io/al-folio/)
