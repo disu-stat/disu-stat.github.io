@@ -25,5 +25,5 @@ Venue: LSB LT2
 
 
 ## References
-1. [Course Website](https://sites.google.com/site/kwchankeith/teaching/s4010/s4010-2023Spring) (This is your major reference for revision.)
-2. [E-learning Platform](https://www1.sta.cuhk.edu.hk/stady/?course=S4010) (You may want to check the platform before bringing questions to us.)
+1. Course Website (Link removed due to 404 error)
+2. E-learning Platform (Link removed due to timeout)

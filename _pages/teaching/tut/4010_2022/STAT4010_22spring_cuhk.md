@@ -26,5 +26,5 @@ Zoom ID: TBA (with the same password as used in the lecture)
 
  
 ## References
-1. [Course Website](https://sites.google.com/site/kwchankeith/teaching/s4010/s4010-2122Spring) (This is your major reference for revision.)
-2. [E-learning Platform](http://www1.sta.cuhk.edu.hk/) (You may want to check the platform before bringing questions to us.)
+1. Course Website (Link removed due to 404 error)
+2. E-learning Platform (Link removed due to timeout)

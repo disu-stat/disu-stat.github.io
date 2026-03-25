@@ -42,7 +42,7 @@ Below are my research interests. I am particularly keen on creating statistical 
 - Dean's List, CUHK (2019/20, 2020/21)
 - Tuition Fee Scholarship, CUHK (2016-2020)
 - Meritorious Winner, [MCM](https://www.comap.com/undergraduate/contests/index.html) (2020)
-- Undergraduate Mathematics Scholarship, [Department of Mathematics](https://www.math.cuhk.edu.hk/), CUHK (2020)
+- Undergraduate Mathematics Scholarship, Department of Mathematics, CUHK (2020)
 - Yasumoto International Exchange Scholarship, CUHK (2018)
 - Distinction, First-Year Mathematics Honours Scheme, Department of Mathematics, CUHK (2017)
 - Honours at Entrance, CUHK (2016)
