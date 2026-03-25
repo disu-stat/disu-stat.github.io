@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import profilePhoto from "./assets/DSC04178.jpg";
+import profilePhoto from "./assets/DSC04178.JPG";
 
 export default function AcademicSinglePageSite() {
   const [openAbstract, setOpenAbstract] = useState<Record<string, boolean>>({});
