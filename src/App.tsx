@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import profilePhoto from "./assets/DSC04178.jpg";
 
 export default function AcademicSinglePageSite() {
   const [openAbstract, setOpenAbstract] = useState<Record<string, boolean>>({});
@@ -282,7 +283,7 @@ useEffect(() => {
             <div className="order-first sm:order-none">
               <div className="h-28 w-28 overflow-hidden rounded-sm bg-zinc-100 sm:ml-auto sm:h-36 sm:w-36">
                 <img
-                  src="/src/assets/DSC04178.JPG"
+                  src={profilePhoto}
                   alt="Di Su"
                   className="h-full w-full object-cover"
                 />
