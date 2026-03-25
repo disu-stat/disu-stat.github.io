@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://disu-stat.github.io/sitemap.xml
